@@ -12,7 +12,7 @@ Devise.setup do |config|
 
   config.jwt do |jwt|
 		# jwt.secret = Rails.application.credentials.devise[:jwt_secret_key]
-    jwt.secret = process.ENV.JWT_SECRET_KEY
+    jwt.secret = ENV['JWT_SECRET_KEY']
 	end
   
   # The secret key used by Devise. Devise uses this key to generate
