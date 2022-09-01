@@ -57,3 +57,5 @@ gem "devise", "~> 4.8"
 gem "devise-jwt", "~> 0.9.0"
 gem "rack-cors", "~> 1.1"
 gem 'dotenv', '~> 2.8', '>= 2.8.1'
+gem 'table_print'
+gem 'letter_opener'
