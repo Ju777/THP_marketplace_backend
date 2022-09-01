@@ -59,3 +59,4 @@ gem "rack-cors", "~> 1.1"
 gem 'dotenv', '~> 2.8', '>= 2.8.1'
 gem 'table_print'
 gem 'letter_opener'
+gem 'figaro'
