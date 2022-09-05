@@ -48,7 +48,6 @@ group :development do
   gem 'sqlite3'
 end
 
-
 group :production do
   gem 'pg'
 end
@@ -60,3 +59,4 @@ gem 'dotenv', '~> 2.8', '>= 2.8.1'
 gem 'table_print'
 gem 'letter_opener'
 gem 'figaro'
+gem 'faker'

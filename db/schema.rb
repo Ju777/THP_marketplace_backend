@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema[7.0].define(version: 2022_09_02_140708) do
+=======
+ActiveRecord::Schema[7.0].define(version: 2022_09_05_081711) do
+>>>>>>> main
   create_table "articles", force: :cascade do |t|
     t.string "title"
     t.text "content"
@@ -21,6 +25,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_02_140708) do
     t.string "location"
     t.decimal "lat"
     t.decimal "lon"
+    t.boolean "furnished"
+    t.boolean "included_charges"
+    t.decimal "surface"
+    t.decimal "other_charges"
     t.index ["user_id"], name: "index_articles_on_user_id"
   end
 
