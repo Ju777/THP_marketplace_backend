@@ -10,12 +10,13 @@ require 'faker'
 Faker::Config.locale = :fr
 
 Article.destroy_all
-# ActiveRecord::Base.connection.reset_pk_sequence!('articles')
-ActiveRecord::Base.connection.execute("DELETE from sqlite_sequence where name = 'articles'") 
+Rails.env.production? ? ActiveRecord::Base.connection.reset_pk_sequence!('articles')
+                        : ActiveRecord::Base.connection.execute("DELETE from sqlite_sequence where name = 'articles'")  
+
 
 User.destroy_all
-# ActiveRecord::Base.connection.reset_pk_sequence!('users')
-ActiveRecord::Base.connection.execute("DELETE from sqlite_sequence where name = 'users'") 
+Rails.env.production? ? ActiveRecord::Base.connection.reset_pk_sequence!('users')
+                        : ActiveRecord::Base.connection.execute("DELETE from sqlite_sequence where name = 'users'") 
 
 User.create(email: "julien@mail.com", password:"123456")
 User.create(email: "foucauld@mail.com", password:"123456")
