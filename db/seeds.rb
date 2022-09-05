@@ -22,7 +22,7 @@ User.create(email: "foucauld@mail.com", password:"123456")
 User.create(email: "joffrey@mail.com", password:"123456")
 
 10.times do
-    User.create(email: Faker::Internet.email, password:"123456")
+    User.create(email: Faker::Internet.safe_email, password:"123456")
 end
 
 
@@ -35,7 +35,7 @@ Article.create(title: Faker::Commerce.department,
                 lon: 2.3311419,
                 furnished:true,
                 included_charges: true,
-                surface: rand(9..1000),
+                surface: rand(9..500),
                 other_charges: rand(1..300)
             )
 
@@ -48,7 +48,7 @@ Article.create(title: Faker::Commerce.department,
     lon: 2.340203,
     furnished:true,
     included_charges: true,
-    surface: rand(9..1000),
+    surface: rand(9..500),
     other_charges: rand(1..300)
 )
 
@@ -61,7 +61,7 @@ Article.create(title: Faker::Commerce.department,
     lon: 2.3084521,
     furnished:true,
     included_charges: true,
-    surface: rand(9..1000),
+    surface: rand(9..500),
     other_charges: rand(1..300)
 )
 
@@ -74,7 +74,7 @@ Article.create(title: Faker::Commerce.department,
     lon: 3.0409613,
     furnished:true,
     included_charges: true,
-    surface: rand(9..1000),
+    surface: rand(9..500),
     other_charges: rand(1..300)
 )
 
@@ -87,7 +87,7 @@ Article.create(title: Faker::Commerce.department,
     lon: 3.011798,
     furnished:true,
     included_charges: true,
-    surface: rand(9..1000),
+    surface: rand(9..500),
     other_charges: rand(1..300)
 )
 
@@ -100,7 +100,7 @@ Article.create(title: Faker::Commerce.department,
     lon: 3.059524,
     furnished:true,
     included_charges: true,
-    surface: rand(9..1000),
+    surface: rand(9..500),
     other_charges: rand(1..300)
 )
 
@@ -113,7 +113,7 @@ Article.create(title: Faker::Commerce.department,
     lon: -0.570437,
     furnished:true,
     included_charges: true,
-    surface: rand(9..1000),
+    surface: rand(9..500),
     other_charges: rand(1..300)
 )
 
@@ -126,7 +126,7 @@ Article.create(title: Faker::Commerce.department,
     lon: -0.573316,
     furnished:true,
     included_charges: true,
-    surface: rand(9..1000),
+    surface: rand(9..500),
     other_charges: rand(1..300)
 )
 
@@ -139,7 +139,7 @@ Article.create(title: Faker::Commerce.department,
     lon: -0.6003414,
     furnished:true,
     included_charges: true,
-    surface: rand(9..1000),
+    surface: rand(9..500),
     other_charges: rand(1..300)
 )
 
@@ -152,7 +152,7 @@ Article.create(title: Faker::Commerce.department,
     lon: 1.4434455,
     furnished:true,
     included_charges: true,
-    surface: rand(9..1000),
+    surface: rand(9..500),
     other_charges: rand(1..300)
 )
 
@@ -165,7 +165,7 @@ Article.create(title: Faker::Commerce.department,
     lon: 1.4550663,
     furnished:true,
     included_charges: true,
-    surface: rand(9..1000),
+    surface: rand(9..500),
     other_charges: rand(1..300)
 )
 
@@ -178,7 +178,7 @@ Article.create(title: Faker::Commerce.department,
     lon: 1.471234,
     furnished:true,
     included_charges: true,
-    surface: rand(9..1000),
+    surface: rand(9..500),
     other_charges: rand(1..300)
 )
 
@@ -191,7 +191,7 @@ Article.create(title: Faker::Commerce.department,
     lon: -0.1168156,
     furnished:true,
     included_charges: true,
-    surface: rand(9..1000),
+    surface: rand(9..500),
     other_charges: rand(1..300)
 )
 
@@ -204,7 +204,7 @@ Article.create(title: Faker::Commerce.department,
     lon: 6.736801,
     furnished:true,
     included_charges: true,
-    surface: rand(9..1000),
+    surface: rand(9..500),
     other_charges: rand(1..300)
 )
 
@@ -217,7 +217,7 @@ Article.create(title: Faker::Commerce.department,
     lon: -4.451864,
     furnished:true,
     included_charges: true,
-    surface: rand(9..1000),
+    surface: rand(9..500),
     other_charges: rand(1..300)
 )
 
