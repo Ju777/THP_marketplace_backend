@@ -5,7 +5,8 @@ class MembersController < ApplicationController
     user = get_user_from_token
     render json: {
       message: "If you see this, you're in!",
-      user: user.as_json(include: :articles)
+      user: user.as_json(include: [:articles, :received_messages])
+      # user: user.as_json(include: [:articles])
     }
   end
 
