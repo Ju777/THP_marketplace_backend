@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_05_081711) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_06_071105) do
   create_table "articles", force: :cascade do |t|
     t.string "title"
     t.text "content"
@@ -36,6 +36,16 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_05_081711) do
     t.index ["jti"], name: "index_jwt_denylist_on_jti"
   end
 
+  create_table "messages", force: :cascade do |t|
+    t.text "content"
+    t.integer "sender_id"
+    t.integer "recipient_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["recipient_id"], name: "index_messages_on_recipient_id"
+    t.index ["sender_id"], name: "index_messages_on_sender_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -49,4 +59,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_05_081711) do
   end
 
   add_foreign_key "articles", "users"
+  add_foreign_key "messages", "users", column: "recipient_id"
+  add_foreign_key "messages", "users", column: "sender_id"
 end
