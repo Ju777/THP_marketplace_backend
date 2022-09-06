@@ -60,3 +60,4 @@ gem 'table_print'
 gem 'letter_opener'
 gem 'figaro'
 gem 'faker'
+
