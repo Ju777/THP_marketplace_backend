@@ -9,6 +9,10 @@
 require 'faker'
 Faker::Config.locale = :fr
 
+Message.destroy_all
+Rails.env.production? ? ActiveRecord::Base.connection.reset_pk_sequence!('messages')
+                        : ActiveRecord::Base.connection.execute("DELETE from sqlite_sequence where name = 'messages'") 
+
 Article.destroy_all
 Rails.env.production? ? ActiveRecord::Base.connection.reset_pk_sequence!('articles')
                         : ActiveRecord::Base.connection.execute("DELETE from sqlite_sequence where name = 'articles'")  
@@ -17,6 +21,7 @@ Rails.env.production? ? ActiveRecord::Base.connection.reset_pk_sequence!('articl
 User.destroy_all
 Rails.env.production? ? ActiveRecord::Base.connection.reset_pk_sequence!('users')
                         : ActiveRecord::Base.connection.execute("DELETE from sqlite_sequence where name = 'users'") 
+
 
 User.create(email: "julien@mail.com", password:"123456")
 User.create(email: "foucauld@mail.com", password:"123456")
@@ -221,6 +226,10 @@ Article.create(title: Faker::Commerce.department,
     surface: rand(9..500),
     other_charges: rand(1..300)
 )
+
+40.times do 
+    Message.create(content: Faker::Book.title, sender_id: rand(1..13), recipient_id: rand(1..13))
+end
 
 # address = [ 
     # "10 rue de la paix paris",
