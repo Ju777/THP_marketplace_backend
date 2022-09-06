@@ -3,7 +3,7 @@ class MessagesController < ApplicationController
 
   # GET /messages
   def index
-    @messages = Message.all
+    @messages = Message.all.order(created_at: "desc")
 
     render json: @messages.as_json(include: [:sender, :recipient])
   end
