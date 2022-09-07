@@ -61,3 +61,5 @@ gem 'letter_opener'
 gem 'figaro'
 gem 'faker'
 
+
+gem "jsonapi-serializer", "~> 2.2"
