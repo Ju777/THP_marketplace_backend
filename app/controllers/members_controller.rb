@@ -16,7 +16,8 @@ class MembersController < ApplicationController
     user = get_user_from_token
     render json: {
       message: "If you see this, you're in!",
-      user: user.as_json(include: [:articles, :received_messages])
+      # user: user.as_json(include: [:articles, :received_messages, :avatar_url])
+      user: UserSerializer.new(user).serializable_hash[:data][:attributes]
       # user: user.as_json(include: [:articles])
     }
   end
@@ -30,11 +31,11 @@ class MembersController < ApplicationController
     user = get_user_from_token
     
     puts "#"*100
-    puts user
+    puts params
     puts "#"*100
 
     if user.update(user_params)
-        user.avatar.attach(params[:avatar])
+        # user.avatar.attach(params[:avatar])
         render json: user
     else
         render json: user.errors, status: :unprocessable_entity
