@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get '/visitors', to: 'members#index'
   get '/visitors/:id', to: 'members#show_visitors'
   put '/update_user', to:'members#update'
+  post 'add_avatar', to:'members#add_avatar'
   
   
 end
