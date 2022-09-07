@@ -21,14 +21,26 @@ class MembersController < ApplicationController
     }
   end
 
+  def add_avatar
+    user = get_user_from_token
+    user.avatar.attach(params[:avatar])
+  end
+
   def update
     user = get_user_from_token
+    
+    puts "#"*100
+    puts user
+    puts "#"*100
 
     if user.update(user_params)
+        user.avatar.attach(params[:avatar])
         render json: user
     else
         render json: user.errors, status: :unprocessable_entity
     end
+
+    
   end
 
   def show_visitors
@@ -54,6 +66,6 @@ class MembersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:avatar, :email)
+    params.require(:user).permit(:avatar, :email, :name)
   end 
 end
