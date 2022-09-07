@@ -61,5 +61,8 @@ gem 'letter_opener'
 gem 'figaro'
 gem 'faker'
 
+gem 'cloudinary'
+gem "aws-sdk-s3", require: false
+
 
 gem "jsonapi-serializer", "~> 2.2"

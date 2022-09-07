@@ -16,26 +16,22 @@ class MembersController < ApplicationController
     user = get_user_from_token
     render json: {
       message: "If you see this, you're in!",
-      # user: user.as_json(include: [:articles, :received_messages, :avatar_url])
       user: UserSerializer.new(user).serializable_hash[:data][:attributes]
-      # user: user.as_json(include: [:articles])
     }
   end
 
-  def add_avatar
-    user = get_user_from_token
-    user.avatar.attach(params[:avatar])
-  end
 
   def update
     user = get_user_from_token
-    
+
+
+    # Cloudinary::Uploader.upload("https://cdn.pixabay.com/photo/2015/04/19/08/32/marguerite-729510__480.jpg", :public_id => "flowers")
     puts "#"*100
+    puts ENV['cloud_name']
     puts params
     puts "#"*100
 
     if user.update(user_params)
-        # user.avatar.attach(params[:avatar])
         render json: user
     else
         render json: user.errors, status: :unprocessable_entity
