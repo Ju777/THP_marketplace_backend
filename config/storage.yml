@@ -12,6 +12,7 @@ amazon:
   secret_access_key: <%= ENV['SECRET_ACCESS_KEY'] %>
   region: eu-west-3
   bucket: thp-active-storage
+# test
 # Remember not to checkin your GCS keyfile to a repository
 # google:
 #   service: GCS
