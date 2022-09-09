@@ -1,24 +1,4 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+MARKETPLACE for The Hacking Project.
+This repo is the API of the application : https://github.com/Ju777/deploy-test-postgresql
+The frontend app is there : https://github.com/fouks5996/marketplace_front
+THe production link is there : https://marketplace-front-one.vercel.app/
